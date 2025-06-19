@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {sliderImages} from "@/data/SliderImages";
 import Image from "next/image";
+import {Box} from "@mui/material";
 
 export default function CustomSlider() {
     const settings = {
@@ -16,13 +17,16 @@ export default function CustomSlider() {
         slidesToScroll: 1,
     };
     return (
-        <Slider {...settings}>
-            {
-                sliderImages.map((image, index) => (
-                    <Image key={index} src={image} alt="img" width={500} height={500} style={{objectFit : "cover"}} ></Image>
-                ))
-            }
-        </Slider>
+        <Box className="slider-container">
+            <Slider {...settings}>
+                {
+                    sliderImages.map((image, index) => (
+                        <Image key={index} src={image} alt="img" width={500} height={500} style={{objectFit : "cover"}} ></Image>
+                    ))
+                }
+            </Slider>
+        </Box>
+
     );
 
 

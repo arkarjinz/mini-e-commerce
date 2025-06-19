@@ -6,7 +6,6 @@ import CustomSlider from "@/components/CustomSlider";
 export default function Home() {
   return (
     <>
-      <Button variant="contained">Contained</Button>
         <CustomSlider/>
     </>
   );
