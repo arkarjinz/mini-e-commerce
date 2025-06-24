@@ -7,7 +7,7 @@ import CategoryList from "@/components/CategoryList";
 export default function Home() {
   return (
     <>
-        <CustomSlider/>
+        {/* <CustomSlider/> */}
         <CategoryList/>
     </>
   );
