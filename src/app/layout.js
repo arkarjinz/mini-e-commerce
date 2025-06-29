@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomNavBar from "@/components/CustomNavBar";
+import {Provider} from "react-redux";
+import {store} from "@/redux/store";
+import ReduxLayout from "@/components/ReduxLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,8 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <CustomNavBar />
-        {children}
+      <ReduxLayout>
+          <CustomNavBar />
+          {children}
+      </ReduxLayout>
+
       </body>
     </html>
   );
