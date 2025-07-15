@@ -6,7 +6,7 @@ import Image from "next/image";
 import { grey } from "@mui/material/colors";
 
 async function CategoryList() {
-  const data = await fetch("https://dummyjson.com/products/category-list");
+  const data = await fetch("https://dummyjson.com/products/categories");
   const categories = await data.json();
   const categoryList = categories.slice(0, 6);
   console.log(categoryList);

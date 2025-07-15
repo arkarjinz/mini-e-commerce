@@ -17,7 +17,7 @@ export default function CustomSlider() {
         slidesToScroll: 1,
     };
     return (
-        <Box className="slider-container">
+        <Box className="slider-container" sx={{mt: {xs: 6, sm: 8}}}>
             <Slider {...settings}>
                 {
                     sliderImages.map((image, index) => (
