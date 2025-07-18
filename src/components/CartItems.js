@@ -1,5 +1,6 @@
 "use client";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -9,14 +10,19 @@ function CartItems() {
   return (
     <>
       {cartItems.length === 0 && <Typography>Cart is empty</Typography>}
-      {cartItems.map((item, index) => {
-        console.log(item)
-        return(
-          <Box key={index}>
-            <Typography>{item.title}</Typography>
-          </Box>
-        )
-      })}
+      <Box>
+        {cartItems.map((item, index) => {
+          console.log(item);
+          return (
+            <Box key={index}>
+              <Typography>{item.title}</Typography>
+            </Box>
+          );
+        })}
+        <Link href="/cart">
+          <Button variant="contained">View all carts</Button>
+        </Link>
+      </Box>
     </>
   );
 }

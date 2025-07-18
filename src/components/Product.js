@@ -11,16 +11,16 @@ function Product({ item }) {
   return (
     <>
       <Grid size={2.4} sx={{ border: `1px solid ${grey[300]}` }}>
-        <Link href={`/${item.id}`}>
-          <Box
-            sx={{
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-              height: "100%",
-            }}
-          >
+        <Box
+          sx={{
+            textAlign: "center",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            height: "100%",
+          }}
+        >
+          <Link href={`/${item.id}`}>
             <Box>
               <Image
                 src={item.thumbnail}
@@ -36,19 +36,18 @@ function Product({ item }) {
                 <Typography>${item.price}</Typography>
               </Box>
             </Box>
-
-            <Button
-              size="small"
-              variant={"outlined"}
-              sx={{ mt: 2, width: "70%", mx: "auto" }}
-              onClick={() => {
-                dispatch(addToCart(item));
-              }}
-            >
-              Add to cart
-            </Button>
-          </Box>
-        </Link>
+          </Link>
+          <Button
+            size="small"
+            variant={"outlined"}
+            sx={{ mt: 2, width: "70%", mx: "auto" }}
+            onClick={() => {
+              dispatch(addToCart(item));
+            }}
+          >
+            Add to cart
+          </Button>
+        </Box>
       </Grid>
     </>
   );

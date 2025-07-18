@@ -1,12 +1,14 @@
+import CartsList from '@/components/CartsList';
+import { Box } from '@mui/material';
 import React from 'react'
 import { useSelector } from 'react-redux';
 
 function Cart() {
    
   return (
-    <div>
-        
-    </div>
+    <Box sx={{mt: 10}}>
+        <CartsList />
+    </Box>
   )
 }
 
